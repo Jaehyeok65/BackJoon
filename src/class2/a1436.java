@@ -11,10 +11,21 @@ public class a1436 {
 		Scanner sc = new Scanner(System.in);
 		
 		int n = sc.nextInt();
-		int result = 666;
-		while(n -- > 0) {
-			
+		long k = Long.MAX_VALUE;
+		long result = 0;
+		
+		for(long i = 0; i < k; i++) {
+			String s = String.valueOf(i);
+			if(s.contains("666")) {
+				n--;
+				result = i;
+			}
+			if(n == 0) {
+				break;
+			}
 		}
+		System.out.print(result);
+		
 		// TODO Auto-generated method stub
 
 	}
