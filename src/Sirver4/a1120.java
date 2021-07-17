@@ -13,7 +13,6 @@ public class a1120 {
 		String a = sc.next();
 		String b = sc.next();  // a < b
 		
-		int k = b.length() - a.length();
 		int max = 0;
 		int i = 0;
 		int result = 0;
