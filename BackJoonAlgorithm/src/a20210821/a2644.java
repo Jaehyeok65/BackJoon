@@ -10,8 +10,6 @@ public class a2644 {
 	static int graph[][];
 	static boolean visited[];
 	static int ans = -1;
-	static int count = 0;
-	static int temp = 0;
 	
 	public static void graphadd(int n, int m) {
 		graph[n][m] = 1;
