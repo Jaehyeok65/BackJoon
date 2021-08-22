@@ -16,17 +16,17 @@ public class a2644 {
 		graph[m][n] = 1;
 	}
 	
-	public static void dfs(int n, int m, int cnt) {
+	public static void dfs(int n, int m, int count) {
 		
 		visited[n] = true;
 		
 		if(n == m) {
-			ans = cnt;
+			ans = count;
 			return;
 		}
 		for(int i = 1; i < graph.length; i++) {
 			if(graph[n][i] == 1 && !visited[i]) {
-				dfs(i,m,cnt+1);
+				dfs(i,m,count+1);
 			}
 		}
 	}
