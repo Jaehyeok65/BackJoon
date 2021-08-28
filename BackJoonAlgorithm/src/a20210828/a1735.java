@@ -40,10 +40,10 @@ public class a1735 {
 		int bunza = bunza1 + bunza2;
 		int result = sol(bunza,bunmo);
 		
-		if(result == -1) {
+		if(result == -1) {    //최대공약수가 없다는 뜻 == 이미 기약분수
 			System.out.print(bunza + " " + bunmo);
 		}
-		else {
+		else {                //최대공약수로 나누면 기약분수
 			bunza = bunza / result;
 			bunmo = bunmo / result;
 			System.out.print(bunza + " " + bunmo);
