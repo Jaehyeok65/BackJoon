@@ -13,6 +13,7 @@ public class a1254 {
 			return true;
 		}
 		
+		
 		return false;
 	}
 	
