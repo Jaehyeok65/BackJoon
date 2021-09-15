@@ -34,7 +34,7 @@ public class a1965 {
 			max = Math.max(max, dp[i]);
 		}
 		
-		System.out.print(max);
+		System.out.print(max); //결과출력
 		
 		
 		// TODO Auto-generated method stub
