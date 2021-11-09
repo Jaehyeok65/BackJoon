@@ -36,17 +36,14 @@ public class program3 {
 				checkindex = checkindex + index;
 			}
 			else if(i.charAt(0) == 'C') {
-				if(checkindex == tablelength - 1) { //삭제할 원소가 맨 마지막 원소라면
-					stack.add(new dot(table[checkindex],checkindex)); //최근에 삭제한 원소를 스택에 추가
-					table[checkindex] = "";  //해당 원소를 비우고
-					tablelength -= 1;        //테이블의 길이를 1감소시킴
-				}
-				else {                             //삭제할 원소가 맨 마지막 원소가 아니라면
+				
 				stack.add(new dot(table[checkindex],checkindex));  //최근에 삭제한 원소를 스택에 추가
 				for(int j = checkindex; j < tablelength-1; j++) { //원소를 한칸 씩 앞으로 이동시킴
 					table[j] = table[j+1];
 				}
 				tablelength -= 1;
+				if(checkindex == tablelength) {
+					checkindex -= 1;
 				}
 				
 			}
@@ -58,6 +55,9 @@ public class program3 {
 				}
 				table[index] = d.name;
 				tablelength += 1;
+				if(index <= checkindex) {  //복구한 인덱스가 현재 선택된 인덱스보다 작거나 같다면 체크인덱스를 1증가시킴
+					checkindex += 1;
+				}
 			}
 		}
 		
@@ -79,6 +79,7 @@ public class program3 {
 			System.out.print(table[i]+ " ");
 		}
 		System.out.println("");
+		System.out.println(table[checkindex]);
 		return answer;
 		
 		
@@ -91,7 +92,7 @@ public class program3 {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt(); //표의 행 개수를 나타내는 변수
 		int k = sc.nextInt(); //현재 선택돼있는 행을 나타내는 변수
-		String [] cmd = {"D 2","C","U 3","C","D 4","C","U 2","Z","Z"};
+		String [] cmd = {"D 2","C","U 3","C","D 4","C","U 2","Z","Z","U 1","C"};
 		String result = solution(n,k,cmd);
 		System.out.print(result);
 		// TODO Auto-generated method stub
