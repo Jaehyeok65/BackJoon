@@ -73,11 +73,6 @@ public class program3 {
 			}
 		}
 
-		for(int i = 0; i < tablelength; i++) {
-			System.out.print(table[i]+ " ");
-		}
-		System.out.println("");
-		System.out.println(table[checkindex]);
 		return answer;
 
 
