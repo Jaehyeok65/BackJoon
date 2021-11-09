@@ -42,7 +42,7 @@ public class program3 {
 					table[j] = table[j+1];
 				}
 				tablelength -= 1;
-				if(checkindex == tablelength) {
+				if(checkindex == tablelength) {  //체크 인덱스가 테이블 크기와 같다면 바로 위의 행을 가리킴
 					checkindex -= 1;
 				}
 				
