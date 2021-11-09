@@ -6,14 +6,14 @@ import java.util.*;
 class dot {
 	String name;
 	int index;
-	
+
 	public dot(String name, int index) {
 		this.name = name;
 		this.index = index;
 	}
 }
 public class program3 {
-	
+
 	public static String solution(int n, int k, String[] cmd) {
 		String answer = "";
 		String [] table = {"무지","콘","어피치","제이지","프로도","네오","튜브","라이언"};
@@ -36,16 +36,14 @@ public class program3 {
 				checkindex = checkindex + index;
 			}
 			else if(i.charAt(0) == 'C') {
-				
 				stack.add(new dot(table[checkindex],checkindex));  //최근에 삭제한 원소를 스택에 추가
 				for(int j = checkindex; j < tablelength-1; j++) { //원소를 한칸 씩 앞으로 이동시킴
 					table[j] = table[j+1];
 				}
 				tablelength -= 1;
-				if(checkindex == tablelength) {  //체크 인덱스가 테이블 크기와 같다면 바로 위의 행을 가리킴
+				if(checkindex == tablelength) {
 					checkindex -= 1;
 				}
-				
 			}
 			else if(i.charAt(0) == 'Z') { //최근 삭제한 원소를 복구
 				dot d = stack.pop(); //가장 최근 삭제한 원소를 pop함.
@@ -55,12 +53,12 @@ public class program3 {
 				}
 				table[index] = d.name;
 				tablelength += 1;
-				if(index <= checkindex) {  //복구한 인덱스가 현재 선택된 인덱스보다 작거나 같다면 체크인덱스를 1증가시킴
+				if(index <= checkindex) {
 					checkindex += 1;
 				}
 			}
 		}
-		
+
 		for(int i = 0; i < n; i++) {
 			boolean check = false;
 			for(int j = 0; j < tablelength; j++) {
@@ -74,21 +72,21 @@ public class program3 {
 				answer += "X";
 			}
 		}
-		
+
 		for(int i = 0; i < tablelength; i++) {
 			System.out.print(table[i]+ " ");
 		}
 		System.out.println("");
 		System.out.println(table[checkindex]);
 		return answer;
-		
-		
-		
-		
+
+
+
+
 	}
 
 	public static void main(String[] args) {
-		
+
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt(); //표의 행 개수를 나타내는 변수
 		int k = sc.nextInt(); //현재 선택돼있는 행을 나타내는 변수
