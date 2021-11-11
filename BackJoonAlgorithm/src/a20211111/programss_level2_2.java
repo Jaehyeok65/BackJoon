@@ -21,7 +21,6 @@ public class programss_level2_2 {
 		Queue<dot> que = new LinkedList<>();
 		que.add(new dot(x,y));
 		check[x][y] = true;
-		int maxsize = 0;
 		int count = 1;
 		
 	     while(!que.isEmpty()) {
@@ -67,8 +66,6 @@ public class programss_level2_2 {
 		}
 		answer[0] = numberOfArea;
 		answer[1] = maxsize;
-		System.out.println(answer[0]);
-		System.out.println(answer[1]);
 		return answer;
 		
 	}
