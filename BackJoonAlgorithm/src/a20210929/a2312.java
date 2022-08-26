@@ -24,6 +24,7 @@ public class a2312 {
 		
 		int t = sc.nextInt();
 		StringBuilder sb = new StringBuilder();
+		
 		while(t --> 0) {
 			int n = sc.nextInt();
 			sol(n); //소수를 찾음

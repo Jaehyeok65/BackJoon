@@ -36,7 +36,6 @@ public class a2638 {
 		while(cheeseCnt != 0) {
 			time++;
 			visited = new boolean[N][M];
-			//dfs(0, 0); // 외부 공기 찾기 
 			bfs();
 			melting(); // 치즈 녹이기 
 		}
@@ -65,23 +64,6 @@ public class a2638 {
 				cheeseList.remove(i);
 				i--;
 			}
-		}
-	}
-
-
-	// dfs로 외부와 접촉한 공기 2로 표시
-	static void dfs(int x, int y) {
-		visited[x][y] = true;
-		map[x][y] = 2; // 외부 공기라는 의미로 2로 바꿔줌 
-
-		for (int i = 0; i < 4; i++) {
-			int nx = x + dx[i];
-			int ny = y + dy[i];
-
-			if (nx < 0 || ny < 0 || nx >= N || ny >= M) continue;
-			if (visited[nx][ny] || map[nx][ny] == 1) continue; // 외내부 공기 판별을 위해 치즈인 경우도 pass 
-
-			dfs(nx, ny); // 공기인 경우만 dfs 수행 
 		}
 	}
 

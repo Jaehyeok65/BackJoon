@@ -10,20 +10,19 @@ public class a1920 {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		HashMap<Integer,Integer> map = new HashMap<>();
+		HashSet<Integer> map = new HashSet<>();
 		StringBuilder sb = new StringBuilder();
 		int N = Integer.parseInt(br.readLine());
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		int i = 0;
 		while(st.hasMoreTokens()) {
 			int temp = Integer.parseInt(st.nextToken());
-			map.put(i, temp);
-			i++;
+			map.add(temp);
 		}
 		int M = Integer.parseInt(br.readLine());
 		StringTokenizer st1 = new StringTokenizer(br.readLine());
 		while(st1.hasMoreTokens()) {
-			if(map.containsValue(Integer.parseInt(st1.nextToken()))) {
+			if(map.contains(Integer.parseInt(st1.nextToken()))) {
 				sb.append("1"+"\n");
 			}
 			else {
