@@ -66,7 +66,7 @@ public class a1926 {
 	                    count++;
 	                    dfs(i, j);
 	                    maxresult = Math.max(result, maxresult);
-	                    result = 0;       // area 초기화
+	                    result = 0;       // result 초기화
 	                }
 	            }
 	        }
